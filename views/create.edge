@@ -1,0 +1,51 @@
+@layout('layouts.app')
+
+@section('content')
+<!-- Page Header -->
+  <header class="masthead" style="background-image: url('/img/contact-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>New Posts</h1>
+            <span class="subheading">Have questions? I have answers.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+   <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <form action="/posts/store" method="POST">
+          <div class="form-group">
+            <input type="text" class="form-control" name="userName" placeholder="UserName">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="title" placeholder="Title">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="description" placeholder="Description">
+          </div>
+          <div class="form-group">
+             <textarea  class="form-control" name="content" placeholder="Content"></textarea>
+          </div>
+          <div class="form-group my-4 text-center">
+            <button class="btn btn-primary" type="submit">Add Post</button>
+          </div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+@endsection
+
+@section('scripts')
+ <!-- Contact Form JavaScript -->
+  <script src="/js/jqBootstrapValidation.js"></script>
+  <script src="/js/contact_me.js"></script>
+
+  <!-- Custom scripts for this template -->
+   <script src="js/clean-blog.min.js"></script>
+@endsection
