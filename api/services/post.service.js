@@ -1,6 +1,7 @@
 const Post = require('../models/post.model');
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/MyBlog');
+//mongoose.connect('mongodb://localhost/MyBlog');
+mongoose.connect("mongodb+srv://hiran:Password@123@myblog-wtlpn.mongodb.net/admin?retryWrites=true&w=majority",{ useNewUrlParser: true });
 
 exports.GetAllPosts = async function(req,res,next){
     var posts = await Post.find({});
@@ -25,4 +26,6 @@ exports.SavePost = async function(req,res,next){
             console.log(err);
             return false;
     });
+
+
 };
