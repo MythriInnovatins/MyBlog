@@ -1,3 +1,3 @@
 exports.GenerateText = async function(){
-    return "Hello world1";
+    return "Hello world";
 }

@@ -1,7 +1,12 @@
 const Post = require('../models/post.model');
 const mongoose = require('mongoose');
 //mongoose.connect('mongodb://localhost/MyBlog');
-mongoose.connect("mongodb+srv://hiran:Password@123@myblog-wtlpn.mongodb.net/admin?retryWrites=true&w=majority",{ useNewUrlParser: true });
+const connector = mongoose.connect("mongodb+srv://mottu:mottu@myblog-wtlpn.mongodb.net/mottu?retryWrites=true&w=majority",{ useNewUrlParser: true });
+connector.then(result =>{
+    console.log('connected to mongodb');
+}).catch(ex=>{
+    console.log(ex);
+})
 
 exports.GetAllPosts = async function(req,res,next){
     var posts = await Post.find({});

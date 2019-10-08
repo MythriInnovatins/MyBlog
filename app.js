@@ -4,13 +4,15 @@ const app = express();
 const router = express.Router();
 const { config, engine } = require('express-edge');
 const postController = require('./api/controller/post.controller');
-const mongoose = require('mongoose');
+//const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const postsRoutes = require('./api/routes/posts');
 // const productsRoutes = require('./api/routes/products');
 
 
-mongoose.connect('mongodb://localhost/MyBlog');
+//mongoose.connect('mongodb://localhost/MyBlog');
+//mongoose.connect("mongodb+srv://hiran:Kailas@12345@myblog-wtlpn.mongodb.net/admin?retryWrites=true&w=majority",{ useNewUrlParser: true });
+
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
